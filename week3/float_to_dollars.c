@@ -10,7 +10,7 @@ int main (){
 
     printf("%.0f dollars", money_dollars);
 
-    money_cents * 100;
+    money_cents = money_cents * 100;
 
     printf(" and %.0f cents.", money_cents);
 
