@@ -15,7 +15,7 @@ int main (){
     gross_salary = basic_salary + transport + housing + medical - retirement_401k - insurance - income_tax;
 
     int gross_salary_integer = gross_salary;
-    printf("The Gross Salary is %d", gross_salary_integer);
+    printf("The Gross Salary is %d\n", gross_salary_integer);
 
     return 0;
     
