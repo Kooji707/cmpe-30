@@ -1,6 +1,5 @@
 #include <stdio.h>
 int main (){
-
     int odd_product = 1;
     int a = 1;
 

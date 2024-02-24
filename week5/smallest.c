@@ -1,4 +1,5 @@
 #include <stdio.h>
+
 //4.11 (Find the Smallest) Write a program that finds the smallest of several integers. Assume that the first value read specifies the number of values remaining.
 
 int main(void) {

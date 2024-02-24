@@ -1,6 +1,5 @@
 #include <stdio.h>
 int main (){
-
     int sum_number = 0;
     int a;
 
