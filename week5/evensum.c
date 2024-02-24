@@ -9,6 +9,5 @@ int main (){
         sum_number += a;
     }
     printf("Sum is %d\n", sum_number);
-
     return 0;
 }
