@@ -2,20 +2,23 @@
 #include <stdlib.h>
 #include <time.h>
 
-int flip(){
+//picks either 0 or 1 and stores it in CoinToss
+void flip(){
     srand(time(0));
     int CoinToss = rand() % 2;
-    return CoinToss;
 }
 
 int main (){
 
     int headCount = 0;
     int tailsCount = 0;
+    int CoinToss;
     
     for (int i = 0; i < 100; i++)
     {
-        int CoinToss = flip();
+        //invokes the function called flip
+        flip();
+        printf("%d \n",CoinToss);
         if (CoinToss == 0) {
             headCount++;
         }
