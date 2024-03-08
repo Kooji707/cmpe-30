@@ -3,13 +3,16 @@
 #include <time.h>
 
 //picks either 0 or 1 and stores it in CoinToss
-void flip(){
-    srand(time(0));
-    int CoinToss = rand() % 2;
+int flip(){
+    int CoinToss;
+    CoinToss = rand() % 2;
+    printf("%d\n",CoinToss);
+    return CoinToss;
 }
 
 int main (){
 
+    srand(time(NULL));
     int headCount = 0;
     int tailsCount = 0;
     int CoinToss;
@@ -17,12 +20,13 @@ int main (){
     for (int i = 0; i < 100; i++)
     {
         //invokes the function called flip
-        flip();
+        CoinToss = flip();
         printf("%d \n",CoinToss);
         if (CoinToss == 0) {
             headCount++;
+        } else {
+            tailsCount++;
         }
-        else tailsCount++;
     }
     printf("%d heads and %d tails.",headCount, tailsCount);
 
