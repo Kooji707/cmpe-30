@@ -14,7 +14,7 @@ int main() {
         size++;
     }
     
-    for (int j = 0; j < size; j++) { 
+    for (int j = 1; j < size; j++) { 
         reversed[j] = string[size - j - 1];
     } //reverse the string and store it in char array named reversed
 
