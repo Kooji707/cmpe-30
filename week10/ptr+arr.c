@@ -1,4 +1,4 @@
-#include<stdio.h>
+#include <stdio.h>
 
 void change (int *pMyArray, int *pMySize) {
     for (int i = 0;i < *pMySize; i++) {
