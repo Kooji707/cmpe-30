@@ -1,50 +1,36 @@
 #include<stdio.h>
 #include <string.h>
 
-void match (char *inputName, char *checkedArray,char letter, int size) {
-    int checkSize = strlen(checkedArray);
+void match (char *inputName) {
+    int nameSize = strlen(inputName);
     int letterCounter = 0;
+    int counter = 0;
 
-    for (int i = 0;i < size; i++) {
-        if (letter == inputName[i]) {
-            letterCounter++;
-            printf("%c %c\n",letter, inputName[i]);
+    for (int i = 0;i < nameSize; i++) {
+        letterCounter = 1;
+        for (int j = i + 1; j < nameSize; j++) {
+            if(inputName[i] == inputName [j] && inputName[i] != ' ') {
+                letterCounter++;
+                inputName[j] = '0';
+            }
+        }
+        if (letterCounter > 1 && inputName[i] != '0') {
+            printf("%c repeats %d times, ", inputName[i], letterCounter);
+            counter++;
         }
     }
-    if (letterCounter > 1) {
-        checkedArray[checkSize] = letter;
+    if(counter == 0) {
+        printf("None of the characters are repeating\n");
     }
 }
 
 int main () {
 
     char inputName[50];
-    int chk;
-    char checkedArray[50]; //letters have already been proven to be repeated will be stored here
 
     printf("Enter a name: ");
-    fgets(inputName, 50, stdin); //get input from the user
-
-    int size = strlen(inputName);
-    printf("lenghth: %d", size);
-
-    for (int i = 0; i < size; i++) {
-        /*
-        for (int k = 0; k < 50; i++) {
-            if (inputName[i] == checkedArray[k]) {
-                chk = 0;
-            } else { 
-                chk = 1; 
-            }
-        }
-        if( chk != 0){
-            match(inputName, checkedArray ,inputName[i], size);
-        }
-        */
-        match(inputName, checkedArray ,inputName[i], size);
-        int checkSize = strlen(checkedArray);
-        //printf("%d\n", checkSize);
-    }
+    fgets(inputName, sizeof(inputName), stdin); //get input from the user
+    match(inputName);
     
     return 0;
 }
