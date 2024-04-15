@@ -16,7 +16,7 @@ int main () {
     for (int i = 0; i < size; i++) {
         if (islower(s[i]) == 1) {
             uppercase[i] = toupper(s[i]);
-        } else {
+        } else if(isupper(s[i]) == 1) {
             uppercase[i] = s[i];
         }
     }
@@ -24,13 +24,12 @@ int main () {
     for (int i = 0; i < size; i++) {
         if (isupper(s[i]) == 1) {
             lowercase[i] = tolower(s[i]);
-        } else {
+        } else if (islower(s[i]) == 1){
             lowercase[i] = s[i];
         }
     }
-    
-    printf("%s", uppercase);
-    printf("%s", lowercase);
 
+    printf("Uppercase: %s \n", uppercase);
+    printf("Lowercase: %s \n", lowercase);
     return 0;
 }

@@ -15,7 +15,10 @@ void match (char *inputName) {
             }
         }
         if (letterCounter > 1 && inputName[i] != '0') {
-            printf("%c repeats %d times, ", inputName[i], letterCounter);
+            if (counter > 0 ) {
+                printf(", ");
+            }
+            printf("%c repeats %d times", inputName[i], letterCounter);
             counter++;
         } 
     }
