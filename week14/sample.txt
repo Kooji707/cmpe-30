@@ -1,0 +1,4 @@
+This is a sample text file.
+It contains multiple lines of text.
+The program should search for specific text.
+Let's test the program with the word "sample".

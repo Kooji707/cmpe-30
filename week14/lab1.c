@@ -1,26 +1,38 @@
-// Fig. 8.11: fig08_11.C
-// Using function getchar.
 #include <stdio.h>
-#define SIZE 80
+#include <string.h>
+#include <stdlib.h>
 
 int main () {
-    int c; // variable to hold character input by user 
-    char sentence[SIZE]; // create char array
-    int i = 0; // initialize counter i
+    FILE *pHelloWorldSource;
+    FILE *pHelloWorldDestination;
+    char inputFile[50];
+    char outputFile[50];
+    char HelloWorldString;
 
-    // prompt user to enter line of text
-    puts("Enter a line of text:");
-    
-    // use getchar to read each character
-    while ((i < SIZE - 1) && (c = getchar()) != '\n') {
-        sentence [i++] = c;
+    printf("Enter the source filename: ");
+    scanf("%s", inputFile);
+    printf("Enter destination filename: ");
+    scanf("%s", outputFile);
+
+    pHelloWorldSource = fopen(inputFile, "r");
+    pHelloWorldDestination = fopen(outputFile, "w");
+
+    if (pHelloWorldSource == NULL) {
+        puts("File could not be opened.");
+    } else { 
+        puts("File was opened succesfully.");
     }
 
-    sentence[i] = '\0'; // terminate string
-    
-    // use puts to display sentence
-    puts("\nThe line entered was:");
-    puts(sentence);
+    int character;
+
+    while ((character = fgetc(pHelloWorldSource)) != EOF) {
+        putchar(character);
+        fprintf(pHelloWorldDestination, "%c", character);
+    }
+
+    fclose(pHelloWorldSource);
+
+    fclose(pHelloWorldDestination);
 
     return 0;
 }
